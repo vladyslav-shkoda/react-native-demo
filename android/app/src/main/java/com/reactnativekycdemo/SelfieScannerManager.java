@@ -19,17 +19,21 @@ import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
+import com.google.gson.GsonBuilder;
 
 import java.util.Map;
 
 import kyc.BaeError;
-import kyc.ob.DocumentScanFrontFragment;
+import kyc.ob.Api;
+import kyc.ob.SelfieAutoCaptureFragment;
+import kyc.ob.responses.DocumentInspectionResponse;
 
-public class FrontScannerManager extends ViewGroupManager<FrameLayout> {
-    public static final String REACT_CLASS = "RCTFrontScanner";
+public class SelfieScannerManager extends ViewGroupManager<FrameLayout> {
+
+    public static final String REACT_CLASS = "RCTSelfie";
     ReactApplicationContext mCallerContext;
 
-    public FrontScannerManager(ReactApplicationContext reactContext) {
+    public SelfieScannerManager(ReactApplicationContext reactContext) {
         mCallerContext = reactContext;
     }
 
@@ -42,17 +46,51 @@ public class FrontScannerManager extends ViewGroupManager<FrameLayout> {
     public void createFragment(FrameLayout root, int reactNativeViewId) {
         ViewGroup parentView = root.findViewById(reactNativeViewId);
         setupLayout(parentView);
-        DocumentScanFrontFragment documentFrontFragment = DocumentScanFrontFragment.newInstance();
-        documentFrontFragment.setDocumentScanListener(new DocumentScanFrontFragment.DocumentScanListener() {
+        SelfieAutoCaptureFragment documentFrontFragment = SelfieAutoCaptureFragment.newInstance();
+        documentFrontFragment.setLivelinessListener(new SelfieAutoCaptureFragment.SelfieListener() {
             @Override
-            public void onDocumentScanFrontSuccess(Bitmap bitmap) {
-                mCallerContext
-                        .getJSModule(RCTEventEmitter.class)
-                        .receiveEvent(reactNativeViewId, "onSuccess", null);
+            public void onSelfieCaptured(Bitmap bitmap) {
+
+                Api api = new Api(mCallerContext, "");
+                api.inspectDocument(new Api.InspectDocumentsCallback() {
+                    @Override
+                    public void onSuccess(DocumentInspectionResponse documentInspectionResponse) {
+                        String ScanningResult = new GsonBuilder()
+                                .setPrettyPrinting()
+                                .create()
+                                .toJson(documentInspectionResponse, DocumentInspectionResponse.class);
+                        WritableMap event = Arguments.createMap();
+                        event.putString("res", ScanningResult);
+
+                        mCallerContext
+                                .getJSModule(RCTEventEmitter.class)
+                                .receiveEvent(reactNativeViewId, "onSuccess", event);
+                    }
+
+                    @Override
+                    public void onFail(BaeError baeError) {
+                        WritableMap event = Arguments.createMap();
+                        event.putString("message", baeError.getMessage());
+                        mCallerContext
+                                .getJSModule(RCTEventEmitter.class)
+                                .receiveEvent(reactNativeViewId, "onFailed", event);
+
+                        Handler handler = new Handler(Looper.getMainLooper());
+
+                        handler.post(() -> {
+                            FragmentActivity activity = (FragmentActivity) mCallerContext.getCurrentActivity();
+                            activity.getSupportFragmentManager()
+                                    .beginTransaction()
+                                    .remove(documentFrontFragment)
+                                    .commit();
+                            createFragment(root, reactNativeViewId);
+                        });
+                    }
+                });
             }
 
             @Override
-            public void onDocumentScanFrontFailed(BaeError baeError) {
+            public void onSelfieFailed(BaeError baeError) {
                 WritableMap event = Arguments.createMap();
                 event.putString("message", baeError.getMessage());
                 mCallerContext
@@ -60,6 +98,7 @@ public class FrontScannerManager extends ViewGroupManager<FrameLayout> {
                         .receiveEvent(reactNativeViewId, "onFailed", event);
 
                 Handler handler = new Handler(Looper.getMainLooper());
+
                 handler.post(() -> {
                     FragmentActivity activity = (FragmentActivity) mCallerContext.getCurrentActivity();
                     activity.getSupportFragmentManager()
@@ -82,7 +121,7 @@ public class FrontScannerManager extends ViewGroupManager<FrameLayout> {
         FragmentActivity activity = (FragmentActivity) mCallerContext.getCurrentActivity();
         activity.getSupportFragmentManager()
                 .beginTransaction()
-                .add(reactNativeViewId, documentFrontFragment)
+                .replace(reactNativeViewId, documentFrontFragment)
                 .commit();
     }
 

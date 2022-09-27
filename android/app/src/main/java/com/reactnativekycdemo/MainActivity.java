@@ -6,7 +6,23 @@ import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactFragment;
 import android.os.Bundle;
+import android.util.Log;
+
 import com.facebook.react.ReactRootView;
+import com.innovatrics.android.commons.io.RawResourceReader;
+import com.innovatrics.android.commons.io.ResourceReader;
+import com.innovatrics.dot.face.DotFace;
+import com.innovatrics.dot.face.DotFaceConfiguration;
+import com.innovatrics.dot.face.detection.fast.DotFaceDetectionFastModule;
+import com.innovatrics.dot.face.eyegazeliveness.DotFaceEyeGazeLivenessModule;
+import com.innovatrics.dot.face.modules.DotFaceModule;
+import com.innovatrics.dot.face.verification.DotFaceVerificationModule;
+
+import java.util.Arrays;
+import java.util.List;
+
+import kyc.ob.Api;
+import kyc.ob.BaeInitializer;
 
 public class MainActivity extends ReactActivity {
 
@@ -40,6 +56,8 @@ public class MainActivity extends ReactActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(null);
+      BaeInitializer di = new BaeInitializer(getContext(), R.raw.iengine);
+      di.initialize();
     }
 
     @Override

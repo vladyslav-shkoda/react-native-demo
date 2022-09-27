@@ -3,21 +3,11 @@ package com.reactnativekycdemo;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
 
-import com.facebook.react.ReactActivity;
 import com.facebook.react.bridge.ActivityEventListener;
 import com.facebook.react.bridge.BaseActivityEventListener;
-import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -31,7 +21,6 @@ import kyc.UploaderFile;
 
 public class BaeModule extends ReactContextBaseJavaModule {
     private Promise promise;
-
 
     private final ActivityEventListener activityEventListener = new BaseActivityEventListener() {
         @Override
@@ -61,8 +50,6 @@ public class BaeModule extends ReactContextBaseJavaModule {
         super(context);
         context.addActivityEventListener(activityEventListener);
     }
-
-
 
     @NonNull
     @Override

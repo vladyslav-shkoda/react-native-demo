@@ -1,6 +1,5 @@
 package com.reactnativekycdemo;
 
-import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.Choreographer;
@@ -23,13 +22,14 @@ import com.facebook.react.uimanager.events.RCTEventEmitter;
 import java.util.Map;
 
 import kyc.BaeError;
-import kyc.ob.DocumentScanFrontFragment;
+import kyc.ob.VideoFragment;
 
-public class FrontScannerManager extends ViewGroupManager<FrameLayout> {
-    public static final String REACT_CLASS = "RCTFrontScanner";
+public class VideoManager extends ViewGroupManager<FrameLayout> {
+
+    public static final String REACT_CLASS = "RCTVideo";
     ReactApplicationContext mCallerContext;
 
-    public FrontScannerManager(ReactApplicationContext reactContext) {
+    public VideoManager(ReactApplicationContext reactContext) {
         mCallerContext = reactContext;
     }
 
@@ -42,24 +42,18 @@ public class FrontScannerManager extends ViewGroupManager<FrameLayout> {
     public void createFragment(FrameLayout root, int reactNativeViewId) {
         ViewGroup parentView = root.findViewById(reactNativeViewId);
         setupLayout(parentView);
-        DocumentScanFrontFragment documentFrontFragment = DocumentScanFrontFragment.newInstance();
-        documentFrontFragment.setDocumentScanListener(new DocumentScanFrontFragment.DocumentScanListener() {
+        VideoFragment documentFrontFragment = new VideoFragment();
+        documentFrontFragment.setVideoRecordListener(new VideoFragment.VideoRecordListener() {
             @Override
-            public void onDocumentScanFrontSuccess(Bitmap bitmap) {
-                mCallerContext
-                        .getJSModule(RCTEventEmitter.class)
-                        .receiveEvent(reactNativeViewId, "onSuccess", null);
-            }
-
-            @Override
-            public void onDocumentScanFrontFailed(BaeError baeError) {
+            public void onVideoRecordSuccess(String s) {
                 WritableMap event = Arguments.createMap();
-                event.putString("message", baeError.getMessage());
+                event.putString("url", s);
                 mCallerContext
                         .getJSModule(RCTEventEmitter.class)
-                        .receiveEvent(reactNativeViewId, "onFailed", event);
+                        .receiveEvent(reactNativeViewId, "onSuccess", event);
 
                 Handler handler = new Handler(Looper.getMainLooper());
+
                 handler.post(() -> {
                     FragmentActivity activity = (FragmentActivity) mCallerContext.getCurrentActivity();
                     activity.getSupportFragmentManager()
@@ -71,18 +65,36 @@ public class FrontScannerManager extends ViewGroupManager<FrameLayout> {
             }
 
             @Override
-            public void onNoCameraPermission() {
+            public void onVideoRecordFailed(BaeError baeError) {
                 WritableMap event = Arguments.createMap();
-                event.putString("message", "No Camera Permission");
+                event.putString("message", baeError.getMessage());
                 mCallerContext
                         .getJSModule(RCTEventEmitter.class)
                         .receiveEvent(reactNativeViewId, "onFailed", event);
+
+                Handler handler = new Handler(Looper.getMainLooper());
+
+                handler.post(() -> {
+                    FragmentActivity activity = (FragmentActivity) mCallerContext.getCurrentActivity();
+                    activity.getSupportFragmentManager()
+                            .beginTransaction()
+                            .remove(documentFrontFragment)
+                            .commit();
+                    createFragment(root, reactNativeViewId);
+                });
+            }
+
+            @Override
+            public void onVideoRecordLoadingStarted() {
+                mCallerContext
+                        .getJSModule(RCTEventEmitter.class)
+                        .receiveEvent(reactNativeViewId, "onLoadingStarted", null);
             }
         });
         FragmentActivity activity = (FragmentActivity) mCallerContext.getCurrentActivity();
         activity.getSupportFragmentManager()
                 .beginTransaction()
-                .add(reactNativeViewId, documentFrontFragment)
+                .replace(reactNativeViewId, documentFrontFragment)
                 .commit();
     }
 
@@ -117,6 +129,13 @@ public class FrontScannerManager extends ViewGroupManager<FrameLayout> {
                         MapBuilder.of(
                                 "phasedRegistrationNames",
                                 MapBuilder.of("bubbled", "onFailed")
+                        )
+                )
+                .put(
+                        "onLoadingStarted",
+                        MapBuilder.of(
+                                "phasedRegistrationNames",
+                                MapBuilder.of("bubbled", "onLoadingStarted")
                         )
                 )
                 .build();

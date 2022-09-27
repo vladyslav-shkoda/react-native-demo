@@ -23,13 +23,13 @@ import com.facebook.react.uimanager.events.RCTEventEmitter;
 import java.util.Map;
 
 import kyc.BaeError;
-import kyc.ob.DocumentScanFrontFragment;
+import kyc.ob.DocumentScanBackFragment;
 
-public class FrontScannerManager extends ViewGroupManager<FrameLayout> {
-    public static final String REACT_CLASS = "RCTFrontScanner";
+public class BackScannerManager extends ViewGroupManager<FrameLayout> {
+    public static final String REACT_CLASS = "RCTBackScanner";
     ReactApplicationContext mCallerContext;
 
-    public FrontScannerManager(ReactApplicationContext reactContext) {
+    public BackScannerManager(ReactApplicationContext reactContext) {
         mCallerContext = reactContext;
     }
 
@@ -42,17 +42,17 @@ public class FrontScannerManager extends ViewGroupManager<FrameLayout> {
     public void createFragment(FrameLayout root, int reactNativeViewId) {
         ViewGroup parentView = root.findViewById(reactNativeViewId);
         setupLayout(parentView);
-        DocumentScanFrontFragment documentFrontFragment = DocumentScanFrontFragment.newInstance();
-        documentFrontFragment.setDocumentScanListener(new DocumentScanFrontFragment.DocumentScanListener() {
+        DocumentScanBackFragment documentFrontFragment = DocumentScanBackFragment.newInstance();
+        documentFrontFragment.setDocumentScanListener(new DocumentScanBackFragment.DocumentScanListener() {
             @Override
-            public void onDocumentScanFrontSuccess(Bitmap bitmap) {
+            public void onDocumentScanBackSuccess(Bitmap bitmap) {
                 mCallerContext
                         .getJSModule(RCTEventEmitter.class)
                         .receiveEvent(reactNativeViewId, "onSuccess", null);
             }
 
             @Override
-            public void onDocumentScanFrontFailed(BaeError baeError) {
+            public void onDocumentScanBackFailed(BaeError baeError) {
                 WritableMap event = Arguments.createMap();
                 event.putString("message", baeError.getMessage());
                 mCallerContext
@@ -82,7 +82,7 @@ public class FrontScannerManager extends ViewGroupManager<FrameLayout> {
         FragmentActivity activity = (FragmentActivity) mCallerContext.getCurrentActivity();
         activity.getSupportFragmentManager()
                 .beginTransaction()
-                .add(reactNativeViewId, documentFrontFragment)
+                .replace(reactNativeViewId, documentFrontFragment)
                 .commit();
     }
 

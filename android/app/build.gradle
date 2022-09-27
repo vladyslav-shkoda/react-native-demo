@@ -135,9 +135,9 @@ android {
     compileSdkVersion 33
 
     defaultConfig {
-        applicationId "com.reactnativekycdemo"
-        minSdk 21
-        targetSdk 21
+        applicationId "com.bankaletihad.sdk"
+        minSdkVersion 23
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()

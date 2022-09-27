@@ -8,12 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* reactNativeKycDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* reactNativeKycDemoTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-reactNativeKycDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-reactNativeKycDemo.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-reactNativeKycDemo-reactNativeKycDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-reactNativeKycDemo-reactNativeKycDemoTests.a */; };
+		50FF13761DDFF2E5A6DD4014 /* libPods-reactNativeKycDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C21E50ABFDB9DC9FD87F92B /* libPods-reactNativeKycDemo.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8459200928DC7BEF0006DAF6 /* BackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8459200828DC7BEF0006DAF6 /* BackManager.m */; };
+		8459200B28DC7BFC0006DAF6 /* BackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459200A28DC7BFC0006DAF6 /* BackManager.swift */; };
+		8459200D28DC7EF70006DAF6 /* SelfieManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8459200C28DC7EF70006DAF6 /* SelfieManager.m */; };
+		8459200F28DC7F190006DAF6 /* SelfieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459200E28DC7F190006DAF6 /* SelfieManager.swift */; };
+		8459201128DC8C190006DAF6 /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459201028DC8C190006DAF6 /* VideoManager.swift */; };
+		8459201328DC8C240006DAF6 /* VideoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8459201228DC8C240006DAF6 /* VideoManager.m */; };
+		847D9A5928D88D290077DAAA /* BaeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D9A5828D88D290077DAAA /* BaeModule.swift */; };
+		847D9A5B28D8A4DA0077DAAA /* BaeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 847D9A5A28D8A4DA0077DAAA /* BaeModule.m */; };
+		847D9A5D28D8B6580077DAAA /* iengine.lic in Resources */ = {isa = PBXBuildFile; fileRef = 847D9A5C28D8B6580077DAAA /* iengine.lic */; };
+		847D9A5F28D9B76D0077DAAA /* hermes.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847D9A5E28D9B76D0077DAAA /* hermes.xcframework */; };
+		847D9A6028D9B76D0077DAAA /* hermes.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 847D9A5E28D9B76D0077DAAA /* hermes.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		847D9A6328D9DDF20077DAAA /* FrontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D9A6228D9DDF20077DAAA /* FrontManager.swift */; };
+		847D9A6528D9DE3E0077DAAA /* FrontManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 847D9A6428D9DE3E0077DAAA /* FrontManager.m */; };
+		FFB7949EA4732CB62E5715C5 /* libPods-reactNativeKycDemo-reactNativeKycDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FDCA510185D5D5B38E74A0 /* libPods-reactNativeKycDemo-reactNativeKycDemoTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +39,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		847D9A6128D9B76D0077DAAA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				847D9A6028D9B76D0077DAAA /* hermes.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		00E356EE1AD99517003FC87E /* reactNativeKycDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reactNativeKycDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,13 +63,26 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = reactNativeKycDemo/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = reactNativeKycDemo/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = reactNativeKycDemo/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-reactNativeKycDemo-reactNativeKycDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reactNativeKycDemo-reactNativeKycDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-reactNativeKycDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativeKycDemo.debug.xcconfig"; path = "Target Support Files/Pods-reactNativeKycDemo/Pods-reactNativeKycDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		48FDCA510185D5D5B38E74A0 /* libPods-reactNativeKycDemo-reactNativeKycDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reactNativeKycDemo-reactNativeKycDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5709B34CF0A7D63546082F79 /* Pods-reactNativeKycDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativeKycDemo.release.xcconfig"; path = "Target Support Files/Pods-reactNativeKycDemo/Pods-reactNativeKycDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-reactNativeKycDemo-reactNativeKycDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativeKycDemo-reactNativeKycDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-reactNativeKycDemo-reactNativeKycDemoTests/Pods-reactNativeKycDemo-reactNativeKycDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-reactNativeKycDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reactNativeKycDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = reactNativeKycDemo/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8459200828DC7BEF0006DAF6 /* BackManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackManager.m; sourceTree = "<group>"; };
+		8459200A28DC7BFC0006DAF6 /* BackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackManager.swift; sourceTree = "<group>"; };
+		8459200C28DC7EF70006DAF6 /* SelfieManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelfieManager.m; sourceTree = "<group>"; };
+		8459200E28DC7F190006DAF6 /* SelfieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieManager.swift; sourceTree = "<group>"; };
+		8459201028DC8C190006DAF6 /* VideoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
+		8459201228DC8C240006DAF6 /* VideoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoManager.m; sourceTree = "<group>"; };
+		847D9A5728D88D280077DAAA /* reactNativeKycDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "reactNativeKycDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		847D9A5828D88D290077DAAA /* BaeModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaeModule.swift; sourceTree = "<group>"; };
+		847D9A5A28D8A4DA0077DAAA /* BaeModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaeModule.m; sourceTree = "<group>"; };
+		847D9A5C28D8B6580077DAAA /* iengine.lic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = iengine.lic; sourceTree = "<group>"; };
+		847D9A5E28D9B76D0077DAAA /* hermes.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = hermes.xcframework; path = "Pods/hermes-engine/destroot/Library/Frameworks/universal/hermes.xcframework"; sourceTree = "<group>"; };
+		847D9A6228D9DDF20077DAAA /* FrontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontManager.swift; sourceTree = "<group>"; };
+		847D9A6428D9DE3E0077DAAA /* FrontManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FrontManager.m; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-reactNativeKycDemo-reactNativeKycDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativeKycDemo-reactNativeKycDemoTests.release.xcconfig"; path = "Target Support Files/Pods-reactNativeKycDemo-reactNativeKycDemoTests/Pods-reactNativeKycDemo-reactNativeKycDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		9C21E50ABFDB9DC9FD87F92B /* libPods-reactNativeKycDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reactNativeKycDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-reactNativeKycDemo-reactNativeKycDemoTests.a in Frameworks */,
+				FFB7949EA4732CB62E5715C5 /* libPods-reactNativeKycDemo-reactNativeKycDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-reactNativeKycDemo.a in Frameworks */,
+				847D9A5F28D9B76D0077DAAA /* hermes.xcframework in Frameworks */,
+				50FF13761DDFF2E5A6DD4014 /* libPods-reactNativeKycDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +127,24 @@
 		13B07FAE1A68108700A75B9A /* reactNativeKycDemo */ = {
 			isa = PBXGroup;
 			children = (
+				847D9A5C28D8B6580077DAAA /* iengine.lic */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				847D9A5828D88D290077DAAA /* BaeModule.swift */,
+				847D9A5728D88D280077DAAA /* reactNativeKycDemo-Bridging-Header.h */,
+				847D9A5A28D8A4DA0077DAAA /* BaeModule.m */,
+				847D9A6228D9DDF20077DAAA /* FrontManager.swift */,
+				847D9A6428D9DE3E0077DAAA /* FrontManager.m */,
+				8459200828DC7BEF0006DAF6 /* BackManager.m */,
+				8459200A28DC7BFC0006DAF6 /* BackManager.swift */,
+				8459200C28DC7EF70006DAF6 /* SelfieManager.m */,
+				8459200E28DC7F190006DAF6 /* SelfieManager.swift */,
+				8459201028DC8C190006DAF6 /* VideoManager.swift */,
+				8459201228DC8C240006DAF6 /* VideoManager.m */,
 			);
 			name = reactNativeKycDemo;
 			sourceTree = "<group>";
@@ -99,9 +152,10 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				847D9A5E28D9B76D0077DAAA /* hermes.xcframework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-reactNativeKycDemo.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-reactNativeKycDemo-reactNativeKycDemoTests.a */,
+				9C21E50ABFDB9DC9FD87F92B /* libPods-reactNativeKycDemo.a */,
+				48FDCA510185D5D5B38E74A0 /* libPods-reactNativeKycDemo-reactNativeKycDemoTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -160,7 +214,7 @@
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
 				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
-				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
+				7D2E714C47282F92A3544037 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,7 +237,8 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				847D9A6128D9B76D0077DAAA /* Embed Frameworks */,
+				F901AF5DFE080329D2765F6C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,7 +262,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1400;
 					};
 				};
 			};
@@ -242,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847D9A5D28D8B6580077DAAA /* iengine.lic in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
@@ -281,6 +337,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-reactNativeKycDemo/Pods-reactNativeKycDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D2E714C47282F92A3544037 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-reactNativeKycDemo-reactNativeKycDemoTests/Pods-reactNativeKycDemo-reactNativeKycDemoTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-reactNativeKycDemo-reactNativeKycDemoTests/Pods-reactNativeKycDemo-reactNativeKycDemoTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-reactNativeKycDemo-reactNativeKycDemoTests/Pods-reactNativeKycDemo-reactNativeKycDemoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
@@ -344,7 +417,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-reactNativeKycDemo-reactNativeKycDemoTests/Pods-reactNativeKycDemo-reactNativeKycDemoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
+		F901AF5DFE080329D2765F6C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,23 +432,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-reactNativeKycDemo/Pods-reactNativeKycDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-reactNativeKycDemo-reactNativeKycDemoTests/Pods-reactNativeKycDemo-reactNativeKycDemoTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-reactNativeKycDemo-reactNativeKycDemoTests/Pods-reactNativeKycDemo-reactNativeKycDemoTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-reactNativeKycDemo-reactNativeKycDemoTests/Pods-reactNativeKycDemo-reactNativeKycDemoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -412,8 +468,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8459200D28DC7EF70006DAF6 /* SelfieManager.m in Sources */,
+				8459200B28DC7BFC0006DAF6 /* BackManager.swift in Sources */,
+				847D9A5B28D8A4DA0077DAAA /* BaeModule.m in Sources */,
+				8459200F28DC7F190006DAF6 /* SelfieManager.swift in Sources */,
+				8459201328DC8C240006DAF6 /* VideoManager.m in Sources */,
+				847D9A5928D88D290077DAAA /* BaeModule.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				8459200928DC7BEF0006DAF6 /* BackManager.m in Sources */,
+				847D9A6328D9DDF20077DAAA /* FrontManager.swift in Sources */,
+				8459201128DC8C190006DAF6 /* VideoManager.swift in Sources */,
+				847D9A6528D9DE3E0077DAAA /* FrontManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +498,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-reactNativeKycDemo-reactNativeKycDemoTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Z3M2S48992;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -449,7 +517,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bankaletihad.sdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/reactNativeKycDemo.app/reactNativeKycDemo";
 			};
@@ -459,8 +527,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-reactNativeKycDemo-reactNativeKycDemoTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = Z3M2S48992;
 				INFOPLIST_FILE = reactNativeKycDemoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -473,7 +543,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bankaletihad.sdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/reactNativeKycDemo.app/reactNativeKycDemo";
 			};
@@ -486,6 +556,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z3M2S48992;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = reactNativeKycDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -497,8 +568,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bankaletihad.sdk;
 				PRODUCT_NAME = reactNativeKycDemo;
+				SWIFT_OBJC_BRIDGING_HEADER = "reactNativeKycDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -512,6 +584,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z3M2S48992;
 				INFOPLIST_FILE = reactNativeKycDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -522,8 +595,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bankaletihad.sdk;
 				PRODUCT_NAME = reactNativeKycDemo;
+				SWIFT_OBJC_BRIDGING_HEADER = "reactNativeKycDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

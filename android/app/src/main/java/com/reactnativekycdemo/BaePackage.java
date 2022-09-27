@@ -15,6 +15,9 @@ public class BaePackage implements ReactPackage {
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         ArrayList<ViewManager> list = new ArrayList<>();
         list.add(new FrontScannerManager(reactContext));
+        list.add(new BackScannerManager(reactContext));
+        list.add(new SelfieScannerManager(reactContext));
+        list.add(new VideoManager(reactContext));
         return list;
     }
 
@@ -22,9 +25,7 @@ public class BaePackage implements ReactPackage {
     public List<NativeModule> createNativeModules(
             ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
-
         modules.add(new BaeModule(reactContext));
-
         return modules;
     }
 
