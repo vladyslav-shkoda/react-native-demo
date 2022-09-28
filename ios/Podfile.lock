@@ -90,7 +90,7 @@ PODS:
   - hermes-engine (0.70.0)
   - iface (4.18.3):
     - onnx (= 1.0.0)
-  - kyc-sdk (1.7.2):
+  - kyc-sdk (1.7.3):
     - dot-document (= 3.3.4)
     - dot-face-background-uniformity (= 4.10.0)
     - dot-face-detection-fast (= 4.10.0)
@@ -445,7 +445,7 @@ DEPENDENCIES:
   - FlipperKit/SKIOSNetworkPlugin (= 0.125.0)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - hermes-engine (from `../node_modules/react-native/sdks/hermes/hermes-engine.podspec`)
-  - kyc-sdk (= 1.7.2)
+  - kyc-sdk (= 1.7.3)
   - libevent (~> 2.1.12)
   - OpenSSL-Universal (= 1.1.1100)
   - Permission-Camera (from `../node_modules/react-native-permissions/ios/Camera`)
@@ -627,7 +627,7 @@ SPEC CHECKSUMS:
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   hermes-engine: 8e84f1284180801c1a1b241f443ba64f931ff561
   iface: ff47d41a36f6004c65d9f9a333a4b377a23b249c
-  kyc-sdk: cdb8390b2d284b0aa58296c660d67ccaefad003f
+  kyc-sdk: e75b3b41966d500497baf5eef2563acf187a0409
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   onnx: 9154dfb152168efe0aaf8ca2867835cee4afa69d
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
@@ -670,6 +670,6 @@ SPEC CHECKSUMS:
   Yoga: 82c9e8f652789f67d98bed5aef9d6653f71b04a9
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: af628c391cc16b714c8c9c0701e59c82c933b430
+PODFILE CHECKSUM: 730970131e2b0ab4f2f60ea9acdb9dd9a0ace1b1
 
 COCOAPODS: 1.11.3

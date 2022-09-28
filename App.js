@@ -15,12 +15,7 @@ import {BackScanner} from './src/components/BackScanner';
 const Stack = createNativeStackNavigator();
 const getScanningScreens = () => {
   return (
-    <Stack.Group
-      screenOptions={{
-        contentStyle: {
-          backgroundColor: 'black',
-        },
-      }}>
+    <Stack.Group>
       <Stack.Screen
         options={{
           title: 'Scan Front of you ID',

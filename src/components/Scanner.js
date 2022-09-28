@@ -1,6 +1,12 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useRef} from 'react';
-import {findNodeHandle, Platform, StyleSheet, UIManager} from 'react-native';
+import {
+  findNodeHandle,
+  Platform,
+  StyleSheet,
+  UIManager,
+  View,
+} from 'react-native';
 import {notifyMessage} from '../utils';
 
 export const Scanner = ({nativeName, onSuccess, Element}) => {
@@ -19,17 +25,19 @@ export const Scanner = ({nativeName, onSuccess, Element}) => {
     }
   }, [nativeName, navigation]);
   return (
-    <Element
-      ref={ref}
-      onSuccess={onSuccess}
-      onFailed={event => {
-        notifyMessage(event.nativeEvent.message);
-      }}
-      style={styles.wrapper}
-    />
+    <View style={styles.wrapper}>
+      <Element
+        ref={ref}
+        onSuccess={onSuccess}
+        onFailed={event => {
+          notifyMessage(event.nativeEvent.message);
+        }}
+        style={styles.wrapper}
+      />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  wrapper: {flex: 1},
+  wrapper: {flex: 1, backgroundColor: 'black'},
 });

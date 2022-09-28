@@ -9,7 +9,7 @@ install! 'cocoapods', :deterministic_uuids => false
 
 target 'reactNativeKycDemo' do
   config = use_native_modules!
-  pod 'kyc-sdk', '1.7.2'
+  pod 'kyc-sdk', '1.7.3'
   permissions_path = '../node_modules/react-native-permissions/ios'
 
   pod 'Permission-Camera', :path => "#{permissions_path}/Camera"

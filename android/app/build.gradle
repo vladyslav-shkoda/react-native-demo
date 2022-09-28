@@ -290,7 +290,7 @@ dependencies {
     implementation "com.innovatrics.dot:dot-face-passive-liveness:$face"
     implementation "com.innovatrics.dot:dot-face-verification:$face"
 
-    implementation 'com.kyc:sdk-kyc:2.3.1'
+    implementation 'com.kyc:sdk-kyc:2.4.1'
 }
 
 if (isNewArchitectureEnabled()) {
