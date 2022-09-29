@@ -22,8 +22,6 @@
 		847D9A5928D88D290077DAAA /* BaeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D9A5828D88D290077DAAA /* BaeModule.swift */; };
 		847D9A5B28D8A4DA0077DAAA /* BaeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 847D9A5A28D8A4DA0077DAAA /* BaeModule.m */; };
 		847D9A5D28D8B6580077DAAA /* iengine.lic in Resources */ = {isa = PBXBuildFile; fileRef = 847D9A5C28D8B6580077DAAA /* iengine.lic */; };
-		847D9A5F28D9B76D0077DAAA /* hermes.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847D9A5E28D9B76D0077DAAA /* hermes.xcframework */; };
-		847D9A6028D9B76D0077DAAA /* hermes.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 847D9A5E28D9B76D0077DAAA /* hermes.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		847D9A6328D9DDF20077DAAA /* FrontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D9A6228D9DDF20077DAAA /* FrontManager.swift */; };
 		847D9A6528D9DE3E0077DAAA /* FrontManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 847D9A6428D9DE3E0077DAAA /* FrontManager.m */; };
 		FFB7949EA4732CB62E5715C5 /* libPods-reactNativeKycDemo-reactNativeKycDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FDCA510185D5D5B38E74A0 /* libPods-reactNativeKycDemo-reactNativeKycDemoTests.a */; };
@@ -38,20 +36,6 @@
 			remoteInfo = reactNativeKycDemo;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		847D9A6128D9B76D0077DAAA /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				847D9A6028D9B76D0077DAAA /* hermes.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		00E356EE1AD99517003FC87E /* reactNativeKycDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reactNativeKycDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,7 +83,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				847D9A5F28D9B76D0077DAAA /* hermes.xcframework in Frameworks */,
 				50FF13761DDFF2E5A6DD4014 /* libPods-reactNativeKycDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,7 +220,6 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				847D9A6128D9B76D0077DAAA /* Embed Frameworks */,
 				F901AF5DFE080329D2765F6C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (

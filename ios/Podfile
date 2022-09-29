@@ -1,14 +1,15 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
 source 'https://github.com/innovatrics/innovatrics-podspecs'
 source 'https://github.com/finto-io/sdk-kyc-podspecs.git'
-
 
 platform :ios, '12.4'
 install! 'cocoapods', :deterministic_uuids => false
 
 target 'reactNativeKycDemo' do
   config = use_native_modules!
+
   pod 'kyc-sdk', '1.7.3'
   permissions_path = '../node_modules/react-native-permissions/ios'
 
@@ -47,5 +48,12 @@ target 'reactNativeKycDemo' do
       :mac_catalyst_enabled => false
     )
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
+    installer.pods_project.targets.each do |target|
+      if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
+      target.build_configurations.each do |config|
+          config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+        end
+      end
+      end
   end
 end
